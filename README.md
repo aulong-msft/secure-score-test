@@ -168,7 +168,7 @@ Minimize blast radius and segment access. Verify end-to-end encryption and use a
 ### Data Classification Reference
   
 ---
-| Data Classification | Guidelines for CLassification|
+| Data Classification | Guidelines for Classification |
 |---------------------|-------------------------------|
 |    Sensitive        |  Data that is to have the most limited access and requires a high degree of integrity. This is typically data that will do the most damage to the organization should it be disclosed. Personal data (including PII) falls into this category and includes any identifier, such as name, an identification number, location data, online identifier. This also includes data related to one or more factors specific to the physical, psychological, genetic, mental, economic, cultural, or social identity of an individual. |
 |   Confidential      |  Data that might be less restrictive within the company but might cause damage if disclosed. |
