@@ -1,6 +1,6 @@
 # Threat Model – [Project Name]
 
-Please modify the template as necessary  to add aditional information and remove information that is out of scope.
+Please modify the template as necessary  to add additional information and remove information that is out of scope.
 
 ## Preamble
 
