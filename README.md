@@ -1,4 +1,4 @@
-# Threat Model – <Project Name>
+# Threat Model – [Project Name]
 
 Please modify the template as necessary  to add aditional information and remove information that is out of scope.
 
@@ -11,7 +11,7 @@ This template is intended to help assess security risk within customer engagemen
 
 ## Overview
 
-Please find the Threat Model for <Project Name> below. This document shows the threat model and data flow diagram of the application. These artifacts were constructed based on documentation and source code from the project itself and are subject to change as the architecture and codebase evolves. Each of the labeled entities in the figures below are accompanied by meta-information which describes the threats, describes the data in scope, and recommendations for security controls.
+Please find the Threat Model for [Project Name] below. This document shows the threat model and data flow diagram of the application. These artifacts were constructed based on documentation and source code from the project itself and are subject to change as the architecture and codebase evolves. Each of the labeled entities in the figures below are accompanied by meta-information which describes the threats, describes the data in scope, and recommendations for security controls.
 
 ## Diagrams
 
