@@ -31,109 +31,18 @@ Please find the Threat Model for [Project Name] below. This document shows the t
 
 
 ### Threat Properties
-
 ---
-**Threat ID:** 1  
-**Principle:** Confidentiality and Integrity  
-**Threat:** As a result of the vulnerability of not encrypting data, plaintext data could be intercepted during transit via a man-in-the-middle (MitM) attack. Sensitive data could be exposed or tampered to allow further exploits.
-
-**Mitigation:**
-
-All products and services must encrypt data in transit using approved cryptographic protocols and algorithms.
-
-1. Use TLS to encrypt all HTTP-based network traffic. Use other mechanisms, such as IPSec, to encrypt non-HTTP network traffic that contains customer or confidential data.
-1. Use only TLS 1.2 or TLS 1.3. Use ECDHE-based ciphers suites and NIST curves. Use strong keys. Enable HTTP Strict Transport Security (HSTS). Turn off TLS compression and do not use ticket-based session resumption.
-  
----
-**Threat ID:** 2  
-**Principle:** Confidentiality  
-**Threat:** Data is a valuable target for most threat actors and attacking the data store directly, as opposed to stealing it during transit, allows data exfiltration at a much larger scale.
-
-**Mitigation:**
-
-All customer or confidential data must be encrypted before being written to non-volatile storage media (encrypted at-rest) per the following requirements.
-
-1. Use approved algorithms. This includes AES-256, AES-192, or AES-128.
-1. Leverage SQL TDE whenever available.
-1. Encryption must be enabled before writing data to storage.
-
----
-**Threat ID:** 3  
-**Principle:** Confidentiality  
-**Threat:** Broken or non-existent authentication mechanisms may allow attackers to gain access to confidential information.
-
-**Mitigation:**
-
-All services within the Azure Trust Boundary must authenticate all incoming requests, including requests coming from the same network. Proper authorizations should also be applied to prevent unnecessary privileges.
-
-1. Whenever available, use Azure Managed Identities to authenticate services. Service Principals may be used if Managed Identities are not supported.
-1. External users or services may use Username + Passwords, Tokens, or Certificates to authenticate, provided these are stored on Key Vault or any other vaulting solution.
-1. For authorization, use Azure RBAC to segregate duties and grant only the least amount of access to perform an action at a particular scope.
-
----
-**Threat ID:** 4  
-**Principle:** Confidentiality and Integrity  
-**Threat:** A large attack surface, particularly those that are exposed on the internet, will increase the probability of a compromise.
-
-**Mitigation:**
-
-Minimize the application attack surface by limiting publicly exposed services.
-
-1. Use strong network controls by using Azure Virtual Networks, Network Security Groups (NSG), or Private Endpoints to protect against unsolicited traffic.
-1. Use Azure Private Endpoints to block all internet connections to services that do not need to be publicly exposed.
-
----
-**Threat ID:** 5  
-**Principle:** Integrity  
-**Threat:** Exploitation of insufficient logging and monitoring is the bedrock of nearly every major incident.
-Attackers rely on the lack of monitoring and timely response to achieve their goals without being detected.
-
-**Mitigation:**
-
-Logging of critical application events must be performed to ensure that, should a security incident occur, incident response and root-cause analysis may be done. Steps must also be taken to ensure that logs are available and cannot be overwritten or destroyed through malicious or accidental occurrences.
-
-At a minimum, the following events should be logged.
-
-1. Login/logout events.
-1. Password change events (if not integrated into SSO).
-1. Privilege delegation events.
-1. Security validation failures (e.g., input validation or authorization check failures).
-1. Application errors and system events.
-1. Application and system startups and shutdowns, as well as logging initialization.
-
----
-**Threat ID:** 6  
-**Principle:** Confidentiality and Integrity  
-**Threat:** Secrets leaking into unsecured locations are an easy way for adversaries to gain access to a system. These secrets can be used to either spoof the owners of these secrets or, in the case of encryption keys, use them to decrypt data.
-
-**Mitigation:**
-
-Proper storage and management of secrets is critical in protecting systems from compromises, in most cases, with severe impact.
-
-1. Never store secrets in code or configuration files. Instead, use a vault or any secure container (such as encrypted variables) to store secrets.
-1. Separate application secrets by environment.
-1. Rotate all secrets before turning over the application to the customer.
-
----
-**Threat ID:** 7  
-**Principle:** Confidentiality and Integrity  
-**Threat:** CI/CD Pipelines should always be cleansed of sensitive information being leaked.
-
-**Mitigation:**
-
-1. All secrets, key materials, and credentials stored in CI/CD Pipelines should always be cleansed of sensitive information that can be witnessed in plaintext.
-1. Add static code analysis tools in CI/CD pipelines to gain security insights about the code being developed, gate insecure code from entering production, and generate an overall more secure and complete solution.
-1. Add dependency scanning to CI/CD pipelines to ensure you are using the most current and secure libraries.
-1. Add credential scanning to CI/CD pipelines to ensure secrets, key information, and passwords are not leaked into the open.
-
----
-**Threat ID:** 8  
-**Principle:** Availability  
-**Threat:** Distributed denial of service (DDoS) attacks is some of the largest availability and security concerns facing customers that are moving their applications to the cloud. A DDoS attempts to exhaust an application's resources, making the application unavailable to legitimate users.
-
-**Mitigation:**
-
-DDoS protection is important to ensure the availability of your cloud services. Azure provides DDoS solutions to you and your customers to provide extra safeguards to this popular attack.
+| # | Security Principle | Threat| Mitigation |
+|---|--------------------|-------|------------|
+| 1 |  Confidentiality and Integrity  | As a result of the vulnerability of not encrypting data, plaintext data could be intercepted during transit via a man-in-the-middle (MitM) attack. Sensitive data could be exposed or tampered to allow further exploits. | All products and services must encrypt data in transit using approved cryptographic protocols and algorithms. <ul><li>Use TLS to encrypt all HTTP-based network traffic. Use other mechanisms, such as IPSec, to encrypt non-HTTP network traffic that contains customer or confidential data. </li><li>Use only TLS 1.2 or TLS 1.3. Use ECDHE-based ciphers suites and NIST curves. Use strong keys. Enable HTTP Strict Transport Security (HSTS). Turn off TLS compression and do not use ticket-based session resumption.</li></ul> |
+| 2 | Confidentiality and Integrity | As a result of the vulnerability of not encrypting data, plaintext data could be intercepted during transit via a man-in-the-middle (MitM) attack. Sensitive data could be exposed or tampered to allow further exploits. | All products and services must encrypt data in transit using approved cryptographic protocols and algorithms. <ul><li>Use TLS to encrypt all HTTP-based network traffic. Use other mechanisms, such as IPSec, to encrypt non-HTTP network traffic that contains customer or confidential data.</li><li> Use only TLS 1.2 or TLS 1.3. Use ECDHE-based ciphers suites and NIST curves. Use strong keys. Enable HTTP Strict Transport Security (HSTS). Turn off TLS compression and do not use ticket-based session resumption.</li></ul>
+| 3 | Confidentiality | Data is a valuable target for most threat actors and attacking the data store directly, as opposed to stealing it during transit, allows data exfiltration at a much larger scale. | All customer or confidential data must be encrypted before being written to non-volatile storage media (encrypted at-rest) per the following requirements. <ul><li>Use approved FIPS compliant algorithms. This includes AES-256, AES-192, or AES-128.</li><li>Leverage SQL TDE whenever available.</li><li>Encryption must be enabled before writing data to storage.</li></ul>
+| 4 | Confidentiality  | Broken or non-existent authentication mechanisms may allow attackers to gain access to confidential information. | All services within the Azure Trust Boundary must authenticate all incoming requests, including requests coming from the same network. Proper authorizations should also be applied to prevent unnecessary privileges. <ul><li>Whenever available, use Azure Managed Identities to authenticate services. Service Principals may be used if Managed Identities are not supported.</li><li>External users or services may use Username + Passwords, Tokens, or Certificates to authenticate, provided these are stored on Key Vault or any other vaulting solution.</li></li><li>For authorization, use Azure RBAC to segregate duties and grant only the least amount of access to perform an action at a particular scope.</li></ul>
+| 5 | Confidentiality and Integrity | A large attack surface, particularly those that are exposed on the internet, will increase the probability of a compromise. | Minimize the application attack surface by limiting publicly exposed services. <ul><li>Use strong network controls by using Azure Virtual Networks, Network Security Groups (NSG), or Private Endpoints to protect against unsolicited traffic.</li><li>Use Azure Private Endpoints to block all internet connections to services that do not need to be publicly exposed.</li></ul>
+| 6 | Integrity | Exploitation of insufficient logging and monitoring is the bedrock of nearly every major incident. Attackers rely on the lack of monitoring and timely response to achieve their goals without being detected. |  Logging of critical application events must be performed to ensure that, should a security incident occur, incident response and root-cause analysis may be done. Steps must also be taken to ensure that logs are available and cannot be overwritten or destroyed through malicious or accidental occurrences. At a minimum, the following events should be logged. <ul><li>Login/logout events.</li><li>Password change events (if not integrated into SSO).</li><li> Privilege delegation events.</li><li>Security validation failures (e.g., input validation or authorization check failures).</li><li>Application errors and system events.</li><li>Application and system startups and shutdowns, as well as logging initialization.</li></ul>
+| 7 | Confidentiality and Integrity |Secrets leaking into unsecured locations are an easy way for adversaries to gain access to a system. These secrets can be used to either spoof the owners of these secrets or, in the case of encryption keys, use them to decrypt data. | Proper storage and management of secrets is critical in protecting systems from compromises, in most cases, with severe impact. <ul><li>Never store secrets in code or configuration files. Instead, use a vault or any secure container (such as encrypted variables) to store secrets.</li><li>Separate application secrets by environment.</li><li>Rotate all secrets before turning over the application to the customer.</li></ul>
+| 8 | Confidentiality and Integrity | CI/CD Pipelines should always be cleansed of sensitive information being leaked. |  <ul><li>All secrets, key materials, and credentials stored in CI/CD Pipelines should always be cleansed of sensitive information that can be witnessed in plaintext.</li><li>Add static code analysis tools in CI/CD pipelines to gain security insights about the code being developed, gate insecure code from entering production, and generate an overall more secure and complete solution.</li><li>Add dependency scanning to CI/CD pipelines to ensure you are using the most current and secure libraries.</li><li>Add credential scanning to CI/CD pipelines to ensure secrets, key information, and passwords are not leaked into the open.</li></ul>
+| 9 |  Availability  |  Distributed denial of service (DDoS) attacks is some of the largest availability and security concerns facing customers that are moving their applications to the cloud. A DDoS attempts to exhaust an application's resources, making the application unavailable to legitimate users. | DDoS protection is important to ensure the availability of your cloud services. Azure provides DDoS solutions to you and your customers to provide extra safeguards to this popular attack.
 
 ---
 
