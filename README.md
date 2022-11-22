@@ -23,7 +23,7 @@ Please find the Threat Model for [Project Name] below. This document shows the t
 
 ![Data Flow Diagram]<add diagram image here>
 
-#### Data Flow Diagram Attributes
+### Data Flow Diagram Attributes
 
 | # | Transport Protocol | Personal Data Elements | Data Classification | Authentication | Notes |
 
@@ -168,25 +168,10 @@ Minimize blast radius and segment access. Verify end-to-end encryption and use a
 ### Data Classification Reference
   
 ---
-
-#### Sensitive  
-  
-Data that is to have the most limited access and requires a high degree of integrity. This is typically data that will do the most damage to the organization should it be disclosed.  
- 
-Personal data (including PII) falls into this category and includes any identifier, such as name, an identification number, location data, online identifier. This also includes data related to one or more factors specific to the physical, psychological, genetic, mental, economic, cultural, or social identity of an individual.
-  
-#### Confidential  
-  
-Data that might be less restrictive within the company but might cause damage if disclosed.
-
-#### Private
-  
-Private data is usually compartmental data that might not do the company damage but must be keep private for other reasons. Human resources data is one example of data that can be classified as private.
-  
-#### Proprietary  
- 
-Proprietary data is data that is disclosed outside the company on a limited basis or contains information that could reduce the company's competitive advantage, such as the technical specifications of a new product.
-
- #### Public
-  
-Public data is the least sensitive data used by the company and would cause the least harm if disclosed. This could be anything from data used for marketing to the number of employees in the company.
+| Data Classification | Guidelines for CLassification|
+|---------------------|-------------------------------|
+|    Sensitive        |  Data that is to have the most limited access and requires a high degree of integrity. This is typically data that will do the most damage to the organization should it be disclosed. Personal data (including PII) falls into this category and includes any identifier, such as name, an identification number, location data, online identifier. This also includes data related to one or more factors specific to the physical, psychological, genetic, mental, economic, cultural, or social identity of an individual. |
+|   Confidential      |  Data that might be less restrictive within the company but might cause damage if disclosed. |
+|   Private           |  Private data is usually compartmental data that might not do the company damage but must be keep private for other reasons. Human resources data is one example of data that can be classified as private. |
+|   Proprietary       |  Proprietary data is data that is disclosed outside the company on a limited basis or contains information that could reduce the company's competitive advantage, such as the technical specifications of a new product. |
+|   Public            |  Public data is the least sensitive data used by the company and would cause the least harm if disclosed. This could be anything from data used for marketing to the number of employees in the company. |
