@@ -27,10 +27,6 @@ Please find the Threat Model for [Project Name] below. This document shows the t
 
 | # | Transport Protocol | Personal Data Elements | Data Classification | Authentication | Notes |
 
-### Threat Map
-
-![Threat map]<add diagram image here>
-
 ### Threat Properties
 
 ---
