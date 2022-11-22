@@ -1,4 +1,4 @@
-# Security Plan – [project-name]
+# Threat Model – <Project Name>
 
 Please modify the template as necessary  to add aditional information and remove information that is out of scope.
 
@@ -11,7 +11,7 @@ This template is intended to help assess security risk within customer engagemen
 
 ## Overview
 
-Please find the Security Plan for [project-name] below. This document shows the threat model and data flow diagram of the application. These artifacts were constructed based on documentation and source code from the project itself and are subject to change as the architecture and codebase evolves. Each of the labeled entities in the figures below are accompanied by meta-information which describes the threats, describes the data in scope, and recommendations for security controls.
+Please find the Threat Model for <Project Name> below. This document shows the threat model and data flow diagram of the application. These artifacts were constructed based on documentation and source code from the project itself and are subject to change as the architecture and codebase evolves. Each of the labeled entities in the figures below are accompanied by meta-information which describes the threats, describes the data in scope, and recommendations for security controls.
 
 ## Diagrams
 
@@ -122,10 +122,7 @@ Proper storage and management of secrets is critical in protecting systems from 
 
 **Mitigation:**
 
-All secrets, key materials, and credentials stored in CI/CD Pipelines should always be cleansed of sensitive information that can be witnessed in plaintext.
-
-**Project Specific Guidance:**
-
+1. All secrets, key materials, and credentials stored in CI/CD Pipelines should always be cleansed of sensitive information that can be witnessed in plaintext.
 1. Add static code analysis tools in CI/CD pipelines to gain security insights about the code being developed, gate insecure code from entering production, and generate an overall more secure and complete solution.
 1. Add dependency scanning to CI/CD pipelines to ensure you are using the most current and secure libraries.
 1. Add credential scanning to CI/CD pipelines to ensure secrets, key information, and passwords are not leaked into the open.
@@ -144,7 +141,9 @@ DDoS protection is important to ensure the availability of your cloud services. 
 ## Appendix
 
 ### Security Principles
-
+  
+---
+  
 #### Confidentiality 
 Confidentiality refers to the objective of keeping data private or secret. In practice, it’s about controlling access to data to prevent unauthorized disclosure.
 
@@ -155,6 +154,8 @@ Integrity is about ensuring that data has not been tampered with and, therefore,
 Availability means that networks, systems, and applications are up and running. It ensures that authorized users have timely, reliable access to resources when they are needed.
 
 ### Microsoft Zero Trust Principles
+  
+---
 
 #### Verify explicitly  
   
@@ -169,6 +170,8 @@ Limit user access with just-in-time and just-enough-access (JIT/JEA), risk-based
 Minimize blast radius and segment access. Verify end-to-end encryption and use analytics to get visibility, drive threat detection, and improve defenses.
 
 ### Data Classification Reference
+  
+---
 
 #### Sensitive  
   
