@@ -24,8 +24,11 @@ Please find the Threat Model for [Project Name] below. This document shows the t
 ![Data Flow Diagram]<add diagram image here>
 
 ### Data Flow Diagram Attributes
+  
+| # | Transport Protocol | Data Classification | Authentication | Notes|
+|---|--------------------|---------------------|----------------|------|
+| 1 | [Name of Protocol] | [Classification]    |  [AuthN]       | [Additonal Notes]
 
-| # | Transport Protocol | Personal Data Elements | Data Classification | Authentication | Notes |
 
 ### Threat Properties
 
@@ -165,7 +168,7 @@ Limit user access with just-in-time and just-enough-access (JIT/JEA), risk-based
   
 Minimize blast radius and segment access. Verify end-to-end encryption and use analytics to get visibility, drive threat detection, and improve defenses.
 
-### Data Classification Reference
+### Commercial Data Classification Reference
   
 ---
 | Data Classification | Guidelines for Classification |
