@@ -4,7 +4,7 @@ Please modify the template as necessary to add additional information and remove
 
 ## Preamble
 
-CSE cannot certify/attest to security of an architecture nor code – the below is intended to help identify and track design decisions and outstanding work related to discussed attack vectors identified during the engagement and intended to provide guidance to CSE dev crews.
+The curators of this document cannot certify/attest to security of an architecture nor code – the below is intended to help identify and track design decisions and outstanding work related to discussed attack vectors identified during the engagement and intended to provide guidance to CSE dev crews.
 
 This template is intended to help assess security risk within customer engagement and produce backlog recommendations to mitigate that risk. Security recommendations can be used in conjunction with those suggested via [BRIE (https://aka.ms/BRIE)](https://aka.ms/BRIE).
 
@@ -27,7 +27,7 @@ Please find the Threat Model for [Project Name] below. This document shows the t
   
 | # | Transport Protocol | Data Classification | Authentication | Notes|
 |---|--------------------|---------------------|----------------|------|
-| 1 | [Name of Protocol] | [Classification]    |  [AuthN]       | [Additonal Notes]
+| 1 | [Name of Protocol] | [Data classification guidance can be found in the Appendix ]    |  [Method of authenticating the service  ]       | [Additonal Notes]
 
 
 ### Threat Properties
@@ -168,6 +168,6 @@ Minimize blast radius and segment access. Verify end-to-end encryption and use a
 |-----------------|-------------------------------|
 |    Sensitive        |  Data that is to have the most limited access and requires a high degree of integrity. This is typically data that will do the most damage to the organization should it be disclosed. Personal data (including PII) falls into this category and includes any identifier, such as name, an identification number, location data, online identifier. This also includes data related to one or more factors specific to the physical, psychological, genetic, mental, economic, cultural, or social identity of an individual. |
 |   Confidential      |  Data that might be less restrictive within the company but might cause damage if disclosed. |
-|   Private           |  Private data is usually compartmental data that might not do the company damage but must be keep private for other reasons. Human resources data is one example of data that can be classified as private. |
+|   Private           |  Private data is usually compartmental data that might not do the company damage but must be kept private for other reasons. Human resources data is one example of data that can be classified as private. |
 |   Proprietary       |  Proprietary data is data that is disclosed outside the company on a limited basis or contains information that could reduce the company's competitive advantage, such as the technical specifications of a new product. |
 |   Public            |  Public data is the least sensitive data used by the company and would cause the least harm if disclosed. This could be anything from data used for marketing to the number of employees in the company. |
