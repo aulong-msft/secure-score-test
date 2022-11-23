@@ -34,7 +34,6 @@ Please find the Threat Model for [Project Name] below. This document shows the t
 ---
 **Threat #:** 1  
 **Principle:** Confidentiality and Integrity  
-**Affected Asset:** Inbound Internet connections  
 **Threat:** As a result of the vulnerability of not encrypting data, plaintext data could be intercepted during transit via a man-in-the-middle (MitM) attack. Sensitive data could be exposed or tampered to allow further exploits.
 
 **Mitigation:**
@@ -47,7 +46,6 @@ All products and services must encrypt data in transit using approved cryptograp
 ---
 **Threat #:** 2  
 **Principle:** Confidentiality  
-**Affected Asset:** All data stores  
 **Threat:** Data is a valuable target for most threat actors and attacking the data store directly, as opposed to stealing it during transit, allows data exfiltration at a much larger scale.
 
 **Mitigation:**
@@ -60,7 +58,6 @@ All customer or confidential data must be encrypted before being written to non-
 ---
 **Threat #:** 3  
 **Principle:** Confidentiality  
-**Affected Asset:** All services  
 **Threat:** Broken or non-existent authentication mechanisms may allow attackers to gain access to confidential information.
 
 **Mitigation:**
@@ -74,7 +71,6 @@ All services within the Azure Trust Boundary must authenticate all incoming requ
 ---
 **Threat #:** 4  
 **Principle:** Confidentiality and Integrity  
-**Affected Asset:** All services  
 **Threat:** A large attack surface, particularly those that are exposed on the internet, will increase the probability of a compromise.
 
 **Mitigation:**
@@ -86,7 +82,6 @@ All services within the Azure Trust Boundary must authenticate all incoming requ
 ---
 **Threat #:** 5  
 **Principle:** Integrity  
-**Affected Asset:** All services  
 **Threat:** Exploitation of insufficient logging and monitoring is the bedrock of nearly every major incident.
 Attackers rely on the lack of monitoring and timely response to achieve their goals without being detected.
 
@@ -105,7 +100,6 @@ At a minimum, the following events should be logged:
 ---
 **Threat #:** 6  
 **Principle:** Confidentiality and Integrity  
-**Affected Asset:** All services  
 **Threat:** Secrets leaking into unsecured locations are an easy way for adversaries to gain access to a system. These secrets can be used to either spoof the owners of these secrets or, in the case of encryption keys, use them to decrypt data.
 
 **Mitigation:**
@@ -118,7 +112,6 @@ At a minimum, the following events should be logged:
 ---
 **Threat #:** 7  
 **Principle:** Confidentiality and Integrity  
-**Affected Asset:** CI/CD Pipelines  
 **Threat:** CI/CD Pipelines should always be cleansed of sensitive information being leaked.
 
 **Mitigation:**
@@ -131,7 +124,6 @@ At a minimum, the following events should be logged:
 ---
 **Threat #:** 8  
 **Principle:** Availability  
-**Affected Asset:** All services  
 **Threat:** Distributed denial of service (DDoS) attacks is some of the largest availability and security concerns facing customers that are moving their applications to the cloud. A DDoS attempts to exhaust an application's resources, making the application unavailable to legitimate users.
 **Mitigation:** 
 1. DDoS protection is important to ensure the availability of your cloud services. Azure provides DDoS solutions to you and your customers to provide extra safeguards to this popular attack.
